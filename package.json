@@ -4,6 +4,7 @@
   "description": "Simple utility module to select weighted random numbers",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint index.js index.test.js",
     "test": "jest"
   },
   "keywords": [
@@ -16,6 +17,7 @@
   "author": "Chris Natale",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^6.8.0",
     "jest": "^25.4.0"
   },
   "dependencies": {

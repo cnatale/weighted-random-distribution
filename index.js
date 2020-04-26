@@ -7,6 +7,7 @@ const validator = new Validator();
 const weightsSchema = {
   type: 'object',
   patternProperties: {
+    /* eslint-disable-next-line */
     '[\s\S]*': {
       type: 'number'
     }
@@ -27,12 +28,12 @@ exports.inPlaceUnsorted = function inPlaceUnsorted(weights) {
   if(!weights) { throw 'weighted-random-distribution.inPlaceUnsorted: function requires one parameter' }
   validator.validate(weights, weightsSchema, { throwError: true });
 
-  const weightsSum = reduce(weights, (result, value, key) => result += value, 0);
+  const weightsSum = reduce(weights, (result, value) => result += value, 0);
   
   const randomValueInWeightRange = Math.random() * (weightsSum - 1);
   let randomWeightCounter = 0;
 
-  const selectedWeightedKey = findKey(weights, (weightValue, key) => {
+  const selectedWeightedKey = findKey(weights, (weightValue) => {
     randomWeightCounter += weightValue;
     if (randomWeightCounter > randomValueInWeightRange) {
       return true;
