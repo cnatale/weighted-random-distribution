@@ -1,6 +1,6 @@
 {
   "name": "weighted-random-distribution",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple utility module to select weighted random numbers",
   "main": "index.js",
   "scripts": {
