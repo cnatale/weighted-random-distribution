@@ -1,5 +1,5 @@
 # Weighted Random Distribution
-A simple utility module to select a set of discrete values based on weighted random distribution.
+A simple utility module to select from a set of discrete values based on weighted random distribution.
 
 ## Usage
 
