@@ -1,6 +1,6 @@
 
 const reduce = require('lodash.reduce');
-const findKey = require('lodash.findKey');
+const findKey = require('lodash.findkey');
 
 const Validator = require('jsonschema').Validator;
 const validator = new Validator();
