@@ -1,0 +1,26 @@
+{
+  "name": "weighted-random-distribution",
+  "version": "1.0.0",
+  "description": "Simple utility module to select weighted random numbers",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "weighted",
+    "random",
+    "number",
+    "random",
+    "number"
+  ],
+  "author": "Chris Natale",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.4.0"
+  },
+  "dependencies": {
+    "jsonschema": "^1.2.6",
+    "lodash.findkey": "^4.6.0",
+    "lodash.reduce": "^4.6.0"
+  }
+}
