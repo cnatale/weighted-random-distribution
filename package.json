@@ -2,6 +2,7 @@
   "name": "weighted-random-distribution",
   "version": "1.0.2",
   "description": "Simple utility module to select weighted random numbers",
+  "repository": "git@github.com:cnatale/weighted-random-distribution.git",
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js index.test.js",
@@ -9,8 +10,6 @@
   },
   "keywords": [
     "weighted",
-    "random",
-    "number",
     "random",
     "number"
   ],
