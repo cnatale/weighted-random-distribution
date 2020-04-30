@@ -30,7 +30,7 @@ exports.inPlaceUnsorted = function inPlaceUnsorted(weights) {
 
   const weightsSum = reduce(weights, (result, value) => result += value, 0);
   
-  const randomValueInWeightRange = Math.random() * (weightsSum - 1);
+  const randomValueInWeightRange = Math.random() * weightsSum;
   let randomWeightCounter = 0;
 
   const selectedWeightedKey = findKey(weights, (weightValue) => {
