@@ -78,15 +78,6 @@ describe('inPlaceUnsorted', () => {
   });
 })
 
-/**
- * perform unity-based normalization
- * 
- * @param valueToNormalize
- * @param xMin
- * @param xMax
- * @param transformedMin {number} default value is 0.
- * @param transformedMax {number} default value is 1.
- */
 describe('normalize', () => {
   test('normalizes value', () => {
     expect(normalize(50, 0, 100)).toEqual(.5);

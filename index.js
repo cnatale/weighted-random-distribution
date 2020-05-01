@@ -45,6 +45,15 @@ exports.inPlaceUnsorted = function inPlaceUnsorted(weights) {
   return selectedWeightedKey;
 }
 
+/**
+ * Performs unity-based normalization. By default, valueToNormalize is normalized to a value between 0 and 1. 
+ * 
+ * @param valueToNormalize
+ * @param xMin {number} The floor of the normalization range.
+ * @param xMax {number} The ceiling of the normalization range.
+ * @param transformedMin {number} Default value is 0.
+ * @param transformedMax {number} Default value is 1.
+ */
 exports.normalize = function normalize(valueToNormalize, xMin, xMax, transformedMin = 0, transformedMax = 1) {
   return transformedMin + ((valueToNormalize - xMin) * (transformedMax - transformedMin)) / (xMax - xMin);
 }
