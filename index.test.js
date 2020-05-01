@@ -1,5 +1,6 @@
 const WeightedRandomDistribution = require('./index');
 const inPlaceUnsorted = WeightedRandomDistribution.inPlaceUnsorted;
+const normalize = WeightedRandomDistribution.normalize;
 const _ = require('lodash');
 
 describe('inPlaceUnsorted', () => {
@@ -76,3 +77,28 @@ describe('inPlaceUnsorted', () => {
     }).toThrow();
   });
 })
+
+/**
+ * perform unity-based normalization
+ * 
+ * @param valueToNormalize
+ * @param xMin
+ * @param xMax
+ * @param transformedMin {number} default value is 0.
+ * @param transformedMax {number} default value is 1.
+ */
+describe('normalize', () => {
+  test('normalizes value', () => {
+    expect(normalize(50, 0, 100)).toEqual(.5);
+    expect(normalize(10, 5, 15)).toEqual(.5);
+    expect(normalize(10, 10, 20)).toEqual(0);
+    expect(normalize(20, 10, 20)).toEqual(1);
+  })
+
+  test('normalize within a transformed range', () => {
+    expect(normalize(50, 0, 100, 0, 8)).toEqual(4);
+    expect(normalize(50, 0, 100, 10, 20)).toEqual(15);
+    expect(normalize(10, 10, 20, 30, 40)).toEqual(30);
+    expect(normalize(20, 10, 20, 30, 40)).toEqual(40);
+  })
+});

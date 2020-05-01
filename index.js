@@ -44,3 +44,7 @@ exports.inPlaceUnsorted = function inPlaceUnsorted(weights) {
 
   return selectedWeightedKey;
 }
+
+exports.normalize = function normalize(valueToNormalize, xMin, xMax, transformedMin = 0, transformedMax = 1) {
+  return transformedMin + ((valueToNormalize - xMin) * (transformedMax - transformedMin)) / (xMax - xMin);
+}
