@@ -57,3 +57,12 @@ exports.inPlaceUnsorted = function inPlaceUnsorted(weights) {
 exports.normalize = function normalize(valueToNormalize, xMin, xMax, transformedMin = 0, transformedMax = 1) {
   return transformedMin + ((valueToNormalize - xMin) * (transformedMax - transformedMin)) / (xMax - xMin);
 }
+
+/**
+ * @param index {number} of an array element
+ * @param arrayLength {number} length of the array
+ * @returns A number between 0 and 1, representing relative position of the element index in the ordered array.
+*/
+exports.quantileNormalize = function quantileNormalize(index, arrayLength) {
+  return index / (arrayLength - 1);
+}

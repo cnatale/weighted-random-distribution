@@ -1,6 +1,7 @@
 const WeightedRandomDistribution = require('./index');
 const inPlaceUnsorted = WeightedRandomDistribution.inPlaceUnsorted;
 const normalize = WeightedRandomDistribution.normalize;
+const quantileNormalize = WeightedRandomDistribution.quantileNormalize;
 const _ = require('lodash');
 
 describe('inPlaceUnsorted', () => {
@@ -91,5 +92,19 @@ describe('normalize', () => {
     expect(normalize(50, 0, 100, 10, 20)).toEqual(15);
     expect(normalize(10, 10, 20, 30, 40)).toEqual(30);
     expect(normalize(20, 10, 20, 30, 40)).toEqual(40);
+  })
+});
+
+describe('quantileNormalize', () => {
+  test('returns normalized value for an index in an ordered array', () => {
+    expect(quantileNormalize(1, 3)).toEqual(.5);
+    expect(quantileNormalize(0, 3)).toEqual(0);
+    expect(quantileNormalize(2, 3)).toEqual(1);
+
+    expect(quantileNormalize(0, 11)).toEqual(0);
+    expect(quantileNormalize(5, 11)).toEqual(0.5);
+    expect(quantileNormalize(2, 11)).toEqual(.2);
+    expect(quantileNormalize(7, 11)).toEqual(.7);
+    expect(quantileNormalize(9, 11)).toEqual(.9);
   })
 });
