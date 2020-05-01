@@ -1,6 +1,6 @@
 {
   "name": "weighted-random-distribution",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Simple utility module to select weighted random numbers",
   "repository": "git@github.com:cnatale/weighted-random-distribution.git",
   "main": "index.js",
