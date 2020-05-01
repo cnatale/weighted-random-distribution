@@ -8,13 +8,34 @@ describe('inPlaceUnsorted', () => {
   })
 
   test('returns a reasonable distribution based on weight', () => {
-    const results = [];
+    let results = [];
     for(let i = 0; i < 1000; i++) {
       results[i] = inPlaceUnsorted({ 'a': 9, 'b': 1, 'c': 1 });
     }
-    const summedResults = _.countBy(results);
+    let summedResults = _.countBy(results);
+    console.log(summedResults)
     expect(summedResults.a).toBeGreaterThanOrEqual(500);
     expect(summedResults.b).toBeGreaterThanOrEqual(50);
+    expect(summedResults.c).toBeGreaterThanOrEqual(50);
+
+    results = [];
+    for(let i = 0; i < 1000; i++) {
+      results[i] = inPlaceUnsorted({ 'a': 1, 'b': 1, 'c': 9 });
+    }
+    summedResults = _.countBy(results);
+    console.log(summedResults)
+    expect(summedResults.a).toBeGreaterThanOrEqual(50);
+    expect(summedResults.b).toBeGreaterThanOrEqual(50);
+    expect(summedResults.c).toBeGreaterThanOrEqual(500);
+
+    results = [];
+    for(let i = 0; i < 1000; i++) {
+      results[i] = inPlaceUnsorted({ 'a': 1, 'b': 9, 'c': 1 });
+    }
+    summedResults = _.countBy(results);
+    console.log(summedResults)
+    expect(summedResults.a).toBeGreaterThanOrEqual(50);
+    expect(summedResults.b).toBeGreaterThanOrEqual(500);
     expect(summedResults.c).toBeGreaterThanOrEqual(50);
   })
 
