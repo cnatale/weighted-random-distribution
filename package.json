@@ -6,16 +6,18 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js index.test.js",
-    "test": "jest"
+    "test": "jest --coverage=true"
   },
   "keywords": [
     "weighted",
     "random",
     "number"
   ],
+  "jest": {},
   "author": "Chris Natale",
   "license": "ISC",
   "devDependencies": {
+    "codecov": "^3.6.5",
     "eslint": "^6.8.0",
     "jest": "^25.4.0"
   },
