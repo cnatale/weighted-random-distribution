@@ -1,6 +1,7 @@
 
 
 ![Node.js CI](https://github.com/cnatale/weighted-random-distribution/workflows/Node.js%20CI/badge.svg)
+[![Codecov Coverage](https://img.shields.io/codecov/c/github/cnatale/weighted-random-distribution/coverage.svg?style=flat-square)](https://codecov.io/gh/cnatale/weighted-random-distribution/)
 # Weighted Random Distribution
 A simple utility module to select from a set of discrete values based on weighted random distribution.
 
